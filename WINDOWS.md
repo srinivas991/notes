@@ -45,5 +45,49 @@ Firewall rules on desktop systems can be centrally managed when joined to a Wind
 
 Anytime we see a gray checkmark next to a permission, it was inherited from a parent directory. By default, all NTFS permissions are inherited from the parent directory. In the Windows world, the C:\ drive is the parent directory to rule all directories unless a system administrator were to disable inheritance inside a newly created folder’s advanced Security settings.
 
-The net share command allows us to view all the shared folders on the system
+The `net share` command allows us to view all the shared folders on the system
+
+Event Viewer is another good place to investigate actions completed on Windows
+
+#### Services and Processes
+
+`Get-Service | ? {$_.Status -eq "Running"} | select -First 2 |fl`
+
+Windows has three categories of services: Local Services, Network Services, and System Services. Services can usually only be created, modified, and deleted by users with administrative privileges. Misconfigurations around service permissions are a common privilege escalation vector on Windows systems.
+
+https://docs.microsoft.com/en-us/windows/win32/rstmgr/critical-system-services
+
+lsass.exe - local security authority subsystem service
+
+When a user attempts to log on to the system, this process verifies their log on attempt and creates access tokens based on the user's permission levels. LSASS is also responsible for user account password changes. All events associated with this process (logon/logoff attempts, etc.) are logged within the Windows Security Log
+
+sysinternals => internet-accessible file share by typing `\\live.sysinternals.com\tools`
+
+serives.msc / sc (cmdline)
+
+```
+sc qc service_name
+sc stop service_name
+sc config service_name binpath=c:\...
+sc sdshow service_name
+```
+
+every windows object has a security descriptor, which we can see for a service using sc sdshow wuauserv
+
+security descriptor has 2 parts, DACL(discretionary) and SACL(system), represented by D: an S: in the security descriptor
+
+Generally, a DACL is used for controlling access to an object, and a SACL is used to account for and log access attempts.
+
+eg: `D:(A;;CCLCSWRPLORC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)`
+
+this is just DACL part ^^
+
+This amalgamation of characters crunched together and delimited by opened and closed parentheses is in a format known as the Security Descriptor Definition Language (SDDL)
+
+`Get-ACL -Path HKLM:\System\CurrentControlSet\Services\wuauserv | Format-List`
+
+`wmic os list brief` => get sys info
+`Get-WmiObject -Class Win32_OperatingSystem | select SystemDirectory,BuildNumber,SerialNumber,Version | ft`
+
+Each of the security principals on the system has a unique security identifier (SID). The system automatically generates SIDs. A SID consists of the Identifier Authority and the Relative ID (RID). In an Active Directory (AD) domain environment, the SID also includes the domain SID.
 
