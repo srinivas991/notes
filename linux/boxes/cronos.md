@@ -117,11 +117,11 @@ so there is a `SQLi` vulnerability on the `admin.cronos.htb` page. We get a logg
 
 on the logged in session we have an option to `ping` and `traceroute`, although `traceroute` doesn't work. and if we intercept the ping in `Burp`, we see there might be some `code injection` that might be going on.
 
-![](../../.gitbook/assets/screenshot-2021-08-09-at-23.03.10.png)
+![](../../.gitbook/assets/screenshot-2021-08-09-at-23.03.10%20%281%29%20%281%29.png)
 
 this below is my attempt on getting a `reverse shell` on the box
 
-![](../../.gitbook/assets/screenshot-2021-08-09-at-23.16.38.png)
+![](../../.gitbook/assets/screenshot-2021-08-09-at-23.16.38%20%281%29.png)
 
 and now, we need to run the following commands on the `Burp repeater`
 
@@ -132,7 +132,7 @@ command=python3+/tmp/shell.py;ping+-c+1&host=8.8.8.8
 
 and, we got a reverse shell as `www-data`
 
-![](../../.gitbook/assets/screenshot-2021-08-09-at-23.18.40.png)
+![](../../.gitbook/assets/screenshot-2021-08-09-at-23.18.40%20%281%29.png)
 
 and we have got a `config.php` here in our working folder, let's try to go to sql.
 
@@ -140,7 +140,7 @@ and we have got a `config.php` here in our working folder, let's try to go to sq
 
 admin pass, not sure if this will lead us to something. So nothing much here after trying to crack this.
 
-![](../../.gitbook/assets/screenshot-2021-08-09-at-23.21.45.png)
+![](../../.gitbook/assets/screenshot-2021-08-09-at-23.21.45%20%281%29%20%281%29.png)
 
 maybe we got something here.
 
@@ -148,7 +148,7 @@ maybe we got something here.
 
 nope, none of this works. By the name of the box, it maybe that there is some `cron jobs` running here. Looking at processes using `pspy`, we can see a pho job running every minute
 
-![](../../.gitbook/assets/screenshot-2021-08-10-at-00.19.47.png)
+![](../../.gitbook/assets/screenshot-2021-08-10-at-00.19.47%20%281%29.png)
 
 so we can modify this file to get code execution as `root` user, so let's do that now. So what I did here is, add a line that says
 
