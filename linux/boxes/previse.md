@@ -1,3 +1,7 @@
+---
+description: 'https://app.hackthebox.eu/machines/373'
+---
+
 # previse
 
 `Nmap` scan
