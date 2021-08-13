@@ -1,7 +1,5 @@
 # smbserver.py
 
-
-
 ```text
 smbserver.py -u guest -password guest -smb2support kalishare $(pwd)
 

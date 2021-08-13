@@ -62,7 +62,7 @@ ________________________________________________
 robots.txt              [Status: 200, Size: 24, Words: 2, Lines: 3]
 server-status           [Status: 403, Size: 298, Words: 22, Lines: 12]
 web.config              [Status: 200, Size: 914, Words: 209, Lines: 24]
-:: Progress: [13842/13842] :: Job [1/1] :: 814 req/sec :: Duration: [0:00:17] :: Errors: 0 ::
+:: Progress: [13842/13842] :: Job [1/1] :: 814 req/sec :: Duration: [0:00:17] :: Errors: 0 ::
 ```
 
 ```text
@@ -108,7 +108,7 @@ ________________________________________________
 admin                   [Status: 200, Size: 1547, Words: 525, Lines: 57]
 www                     [Status: 200, Size: 2319, Words: 990, Lines: 86]
 WWW                     [Status: 200, Size: 2319, Words: 990, Lines: 86]
-:: Progress: [20000/20000] :: Job [1/1] :: 588 req/sec :: Duration: [0:00:34] :: Errors: 24 :
+:: Progress: [20000/20000] :: Job [1/1] :: 588 req/sec :: Duration: [0:00:34] :: Errors: 24 :
 ```
 
 so there is a `SQLi` vulnerability on the `admin.cronos.htb` page. We get a logged in session if we try that.

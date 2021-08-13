@@ -57,7 +57,7 @@ Host script results:
 |_clock-skew: -1s
 ```
 
-So, the web server says that it supports a lower version of TLS, so lets try to get our browser to work with the lower versions of TLS. to do that, we need to change the TLS min version in firefox, which we can obtain how to do if we do a quick google on that. 
+So, the web server says that it supports a lower version of TLS, so lets try to get our browser to work with the lower versions of TLS. to do that, we need to change the TLS min version in firefox, which we can obtain how to do if we do a quick google on that.
 
 we have quite some hits from the ffuf scan we did on the server after we enabled lower TLS versions from the command line. lets go through them
 

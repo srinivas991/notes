@@ -1,6 +1,6 @@
 # openssh lower version
 
-{% embed url="https://unix.stackexchange.com/questions/402746/ssh-unable-to-negotiate-no-matching-key-exchange-method-found" %}
+{% embed url="https://unix.stackexchange.com/questions/402746/ssh-unable-to-negotiate-no-matching-key-exchange-method-found" caption="" %}
 
 just add this below in you ~/.ssh/config file with host as the target machine
 

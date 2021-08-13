@@ -1,6 +1,6 @@
 # smtp postfix
 
-Postfix is an mail server \(with some bunch of extra features\) which runs on SMTP, it has the feature where is runs a script on sending every mail, like, if a mail goes through the SMTP server, it can add extra .stuff into the mail, like adding disclaimers, where the argv is the script it runs in the below example. 
+Postfix is an mail server \(with some bunch of extra features\) which runs on SMTP, it has the feature where is runs a script on sending every mail, like, if a mail goes through the SMTP server, it can add extra .stuff into the mail, like adding disclaimers, where the argv is the script it runs in the below example.
 
 ![](../../.gitbook/assets/screenshot-2021-08-08-at-15.58.48.png)
 

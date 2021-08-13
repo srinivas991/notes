@@ -12,5 +12,3 @@ export OPENSSL_CONF=~/.openssl_allow_tls1.0.cnf
 https://askubuntu.com/questions/1250787/when-i-try-to-curl-a-website-i-get-ssl-error
 ```
 
-
-
