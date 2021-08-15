@@ -29,6 +29,7 @@
   * [Forest](windows/devel/forest.md)
   * [Heist](windows/devel/heist.md)
   * [Intelligence](windows/devel/intelligence.md)
+  * [blackfield](windows/devel/blackfield.md)
 
 ## Linux
 
