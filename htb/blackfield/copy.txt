@@ -1,0 +1,6 @@
+set context persistent nowriters
+set metadata c:\temp\metadata.cab
+set verbose on
+add volume c: alias privesccopy
+create
+expose %privesccopy% y:
