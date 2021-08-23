@@ -41,4 +41,5 @@
   * [Beep](linux/boxes/beep.md)
   * [cronos](linux/boxes/cronos.md)
   * [previse](linux/boxes/previse.md)
+  * [blunder](linux/boxes/blunder.md)
 
