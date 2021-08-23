@@ -71,3 +71,5 @@ User hugo may run the following commands on blunder:
 
 and once we run the above command, we are `root`.
 
+![](../../.gitbook/assets/screenshot-2021-08-24-at-01.54.58.png)
+
