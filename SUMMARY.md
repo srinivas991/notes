@@ -37,6 +37,7 @@
 
 * [privesc](linux/privesc/README.md)
   * [smtp postfix](linux/privesc/smtp-postfix.md)
+  * [common searches](linux/privesc/common-searches.md)
 * [boxes](linux/boxes/README.md)
   * [Beep](linux/boxes/beep.md)
   * [cronos](linux/boxes/cronos.md)
