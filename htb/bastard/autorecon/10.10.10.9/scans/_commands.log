@@ -1,0 +1,28 @@
+nmap -vv --reason -Pn -sU -A --top-ports=20 --version-all -oN "/home/kali/notes/htb/bastard/autorecon/10.10.10.9/scans/_top_20_udp_nmap.txt" -oX "/home/kali/notes/htb/bastard/autorecon/10.10.10.9/scans/xml/_top_20_udp_nmap.xml" 10.10.10.9
+
+nmap -vv --reason -Pn -sV -sC --version-all -oN "/home/kali/notes/htb/bastard/autorecon/10.10.10.9/scans/_quick_tcp_nmap.txt" -oX "/home/kali/notes/htb/bastard/autorecon/10.10.10.9/scans/xml/_quick_tcp_nmap.xml" 10.10.10.9
+
+nmap -vv --reason -Pn -A --osscan-guess --version-all -p- -oN "/home/kali/notes/htb/bastard/autorecon/10.10.10.9/scans/_full_tcp_nmap.txt" -oX "/home/kali/notes/htb/bastard/autorecon/10.10.10.9/scans/xml/_full_tcp_nmap.xml" 10.10.10.9
+
+if [ "False" == "True" ]; then sslscan --show-certificate --no-colour 10.10.10.9:80 2>&1 | tee "/home/kali/notes/htb/bastard/autorecon/10.10.10.9/scans/tcp_80_sslscan.txt"; fi
+
+nmap -vv --reason -Pn -sV -p 80 --script="banner,(http* or ssl*) and not (brute or broadcast or dos or external or http-slowloris* or fuzzer)" -oN "/home/kali/notes/htb/bastard/autorecon/10.10.10.9/scans/tcp_80_http_nmap.txt" -oX "/home/kali/notes/htb/bastard/autorecon/10.10.10.9/scans/xml/tcp_80_http_nmap.xml" 10.10.10.9
+
+curl -sSik http://10.10.10.9:80/ -m 10 2>&1 | tee "/home/kali/notes/htb/bastard/autorecon/10.10.10.9/scans/tcp_80_http_index.html"
+
+curl -sSik http://10.10.10.9:80/robots.txt -m 10 2>&1 | tee "/home/kali/notes/htb/bastard/autorecon/10.10.10.9/scans/tcp_80_http_robots.txt"
+
+if hash wkhtmltoimage 2> /dev/null; then wkhtmltoimage --format png http://10.10.10.9:80/ /home/kali/notes/htb/bastard/autorecon/10.10.10.9/scans/tcp_80_http_screenshot.png; fi
+
+whatweb --color=never --no-errors -a 3 -v http://10.10.10.9:80 2>&1 | tee "/home/kali/notes/htb/bastard/autorecon/10.10.10.9/scans/tcp_80_http_whatweb.txt"
+
+feroxbuster -u http://10.10.10.9:80 -t 10 -w /usr/share/seclists/Discovery/Web-Content/common.txt -x "txt,html,php,asp,aspx,jsp" -v -k -n -o /home/kali/notes/htb/bastard/autorecon/10.10.10.9/scans/tcp_80_http_feroxbuster.txt
+
+if [ "False" == "True" ]; then sslscan --show-certificate --no-colour 10.10.10.9:135 2>&1 | tee "/home/kali/notes/htb/bastard/autorecon/10.10.10.9/scans/tcp_135_sslscan.txt"; fi
+
+nmap -vv --reason -Pn -sV -p 135 --script="banner,msrpc-enum,rpc-grind,rpcinfo" -oN "/home/kali/notes/htb/bastard/autorecon/10.10.10.9/scans/tcp_135_rpc_nmap.txt" -oX "/home/kali/notes/htb/bastard/autorecon/10.10.10.9/scans/xml/tcp_135_rpc_nmap.xml" 10.10.10.9
+
+if [ "False" == "True" ]; then sslscan --show-certificate --no-colour 10.10.10.9:49154 2>&1 | tee "/home/kali/notes/htb/bastard/autorecon/10.10.10.9/scans/tcp_49154_sslscan.txt"; fi
+
+nmap -vv --reason -Pn -sV -p 49154 --script="banner,msrpc-enum,rpc-grind,rpcinfo" -oN "/home/kali/notes/htb/bastard/autorecon/10.10.10.9/scans/tcp_49154_rpc_nmap.txt" -oX "/home/kali/notes/htb/bastard/autorecon/10.10.10.9/scans/xml/tcp_49154_rpc_nmap.xml" 10.10.10.9
+

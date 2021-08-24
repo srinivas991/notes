@@ -1,0 +1,2 @@
+# Nmap 7.91 scan initiated Fri Aug  6 13:42:29 2021 as: nmap -sS -sV -sC -A -O -oN grandpa 10.10.10.14
+# Nmap done at Fri Aug  6 13:42:33 2021 -- 1 IP address (0 hosts up) scanned in 4.09 seconds

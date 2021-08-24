@@ -1,0 +1,10 @@
+.php
+
+about
+0
+admin
+install.php
+robots.txt
+todo.txt
+usb
+LICENSE

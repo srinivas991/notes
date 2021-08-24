@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.91 scan initiated Fri Aug 20 16:04:29 2021 as: nmap -vv -&#45;reason -Pn -A -&#45;osscan-guess -&#45;version-all -p- -oN /home/kali/notes/htb/frolic/results/10.129.1.92/scans/_full_tcp_nmap.txt -oX /home/kali/notes/htb/frolic/results/10.129.1.92/scans/xml/_full_tcp_nmap.xml 10.129.1.92 -->
+<nmaprun scanner="nmap" args="nmap -vv -&#45;reason -Pn -A -&#45;osscan-guess -&#45;version-all -p- -oN /home/kali/notes/htb/frolic/results/10.129.1.92/scans/_full_tcp_nmap.txt -oX /home/kali/notes/htb/frolic/results/10.129.1.92/scans/xml/_full_tcp_nmap.xml 10.129.1.92" start="1629455669" startstr="Fri Aug 20 16:04:29 2021" version="7.91" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="2"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1629455669"/>
+<taskend task="NSE" time="1629455669"/>
+<taskbegin task="NSE" time="1629455669"/>
+<taskend task="NSE" time="1629455669"/>
+<taskbegin task="NSE" time="1629455669"/>
+<taskend task="NSE" time="1629455669"/>
+<taskbegin task="Connect Scan" time="1629455669"/>
+<taskprogress task="Connect Scan" time="1629455700" percent="3.37" remaining="889" etc="1629456588"/>
+<taskprogress task="Connect Scan" time="1629455730" percent="5.97" remaining="960" etc="1629456690"/>
+<taskprogress task="Connect Scan" time="1629455760" percent="8.18" remaining="1022" etc="1629456781"/>
+<taskprogress task="Connect Scan" time="1629456036" percent="27.57" remaining="964" etc="1629457000"/>
+<taskprogress task="Connect Scan" time="1629456267" percent="36.72" remaining="1031" etc="1629457298"/>
+<taskprogress task="Connect Scan" time="1629456501" percent="42.76" remaining="1114" etc="1629457615"/>
+<taskprogress task="Connect Scan" time="1629456840" percent="49.15" remaining="1212" etc="1629458052"/>
+<taskprogress task="Connect Scan" time="1629457809" percent="66.22" remaining="1092" etc="1629458901"/>
+<taskprogress task="Connect Scan" time="1629458214" percent="73.26" remaining="929" etc="1629459143"/>
+<taskprogress task="Connect Scan" time="1629458523" percent="79.07" remaining="756" etc="1629459278"/>
+<taskprogress task="Connect Scan" time="1629458817" percent="84.58" remaining="574" etc="1629459391"/>
+<taskprogress task="Connect Scan" time="1629459096" percent="89.86" remaining="387" etc="1629459483"/>
+<taskprogress task="Connect Scan" time="1629459369" percent="94.98" remaining="196" etc="1629459564"/>
+<taskprogress task="Connect Scan" time="1629459564" percent="98.66" remaining="53" etc="1629459617"/>
+<taskend task="Connect Scan" time="1629459646" extrainfo="65535 total ports"/>
+<taskbegin task="Service scan" time="1629459646"/>
+<taskend task="Service scan" time="1629459658" extrainfo="5 services on 1 host"/>
+<taskbegin task="NSE" time="1629459658"/>
+<taskend task="NSE" time="1629459664"/>
+<taskbegin task="NSE" time="1629459664"/>
+<taskend task="NSE" time="1629459665"/>
+<taskbegin task="NSE" time="1629459665"/>
+<taskend task="NSE" time="1629459665"/>
+<host starttime="1629455669" endtime="1629459665"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="10.129.1.92" addrtype="ipv4"/>
+<hostnames>
+<hostname name="frolic.htb" type="PTR"/>
+</hostnames>
+<ports><extraports state="closed" count="65473">
+<extrareasons reason="conn-refused" count="65473"/>
+</extraports>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ssh" product="OpenSSH" version="7.2p2 Ubuntu 4ubuntu2.4" extrainfo="Ubuntu Linux; protocol 2.0" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:7.2p2</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="ssh-hostkey" output="&#xa;  2048 87:7b:91:2a:0f:11:b6:57:1e:cb:9f:77:cf:35:e2:21 (RSA)&#xa;ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3HUqxhCShF9I6uBmGCX6yXz56Iibv7WW2fBKsKA9yVqmoupPdDKac1U3/PIioRNHkPC03r5ZXsqfALwjIWEits7toO4K+9VSFU6d0qhmpUZW3WwiyxdcPxmTQLpU8InXZpMOwjpGJTTwqxsMIxNdPk0FP/MtqEzQI45MOr7IQOGcEAsmcJ1Cy3aRDAnp77NBWYA316l7Xb8WA/aWoHEyS/6Qf3XzeARf0yZ6YwYg4TTsaeQtfRr4HWZBDs7fLrrWUzN0ivb9izy9YgqrOJ5ZKQI4A1yn0CxZNsiweIT8gopM1KrfinPGiKbGbSNVvTX2dHYyISh6Y2bp1D5vum6SH&#xa;  256 b7:9b:06:dd:c2:5e:28:44:78:41:1e:67:7d:1e:b7:62 (ECDSA)&#xa;ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBDSjEcHeA/VoBi4PaoyxwM1Rx1vpoQofoJPYTxBuQLXRujf3gqn491cWpd2CDh2mF/3w2kEGsrWRwqD4LZmz+Sk=&#xa;  256 21:cf:16:6d:82:a4:30:c3:c6:9c:d7:38:ba:b5:02:b0 (ED25519)&#xa;ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINVT+d0lX5zwXTOY4h4+MfU6kt/q3EmGVWIXnMsomQq5"><table>
+<elem key="key">AAAAB3NzaC1yc2EAAAADAQABAAABAQC3HUqxhCShF9I6uBmGCX6yXz56Iibv7WW2fBKsKA9yVqmoupPdDKac1U3/PIioRNHkPC03r5ZXsqfALwjIWEits7toO4K+9VSFU6d0qhmpUZW3WwiyxdcPxmTQLpU8InXZpMOwjpGJTTwqxsMIxNdPk0FP/MtqEzQI45MOr7IQOGcEAsmcJ1Cy3aRDAnp77NBWYA316l7Xb8WA/aWoHEyS/6Qf3XzeARf0yZ6YwYg4TTsaeQtfRr4HWZBDs7fLrrWUzN0ivb9izy9YgqrOJ5ZKQI4A1yn0CxZNsiweIT8gopM1KrfinPGiKbGbSNVvTX2dHYyISh6Y2bp1D5vum6SH</elem>
+<elem key="type">ssh-rsa</elem>
+<elem key="fingerprint">877b912a0f11b6571ecb9f77cf35e221</elem>
+<elem key="bits">2048</elem>
+</table>
+<table>
+<elem key="key">AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBDSjEcHeA/VoBi4PaoyxwM1Rx1vpoQofoJPYTxBuQLXRujf3gqn491cWpd2CDh2mF/3w2kEGsrWRwqD4LZmz+Sk=</elem>
+<elem key="type">ecdsa-sha2-nistp256</elem>
+<elem key="fingerprint">b79b06ddc25e284478411e677d1eb762</elem>
+<elem key="bits">256</elem>
+</table>
+<table>
+<elem key="key">AAAAC3NzaC1lZDI1NTE5AAAAINVT+d0lX5zwXTOY4h4+MfU6kt/q3EmGVWIXnMsomQq5</elem>
+<elem key="type">ssh-ed25519</elem>
+<elem key="fingerprint">21cf166d82a430c3c69cd738bab502b0</elem>
+<elem key="bits">256</elem>
+</table>
+</script></port>
+<port protocol="tcp" portid="139"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="netbios-ssn" product="Samba smbd" version="3.X - 4.X" extrainfo="workgroup: WORKGROUP" hostname="FROLIC" method="probed" conf="10"><cpe>cpe:/a:samba:samba</cpe></service></port>
+<port protocol="tcp" portid="445"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="netbios-ssn" product="Samba smbd" version="4.3.11-Ubuntu" extrainfo="workgroup: WORKGROUP" hostname="FROLIC" method="probed" conf="10"><cpe>cpe:/a:samba:samba</cpe></service></port>
+<port protocol="tcp" portid="1880"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Node.js" extrainfo="Express middleware" method="probed" conf="10"><cpe>cpe:/a:nodejs:node.js</cpe></service><script id="http-favicon" output="Unknown favicon MD5: 818DD6AFD0D0F9433B21774F89665EEA"/><script id="http-methods" output="&#xa;  Supported Methods: GET HEAD POST OPTIONS"><table key="Supported Methods">
+<elem>GET</elem>
+<elem>HEAD</elem>
+<elem>POST</elem>
+<elem>OPTIONS</elem>
+</table>
+</script><script id="http-title" output="Node-RED"><elem key="title">Node-RED</elem>
+</script></port>
+<port protocol="tcp" portid="2156"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="trp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="4193"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="pvxplusio" method="table" conf="3"/></port>
+<port protocol="tcp" portid="5777"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="dali-port" method="table" conf="3"/></port>
+<port protocol="tcp" portid="6005"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="X11:5" method="table" conf="3"/></port>
+<port protocol="tcp" portid="6906"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="9367"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="9407"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="9516"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="9999"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="nginx" version="1.10.3" extrainfo="Ubuntu" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx:1.10.3</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="http-methods" output="&#xa;  Supported Methods: GET HEAD"><table key="Supported Methods">
+<elem>GET</elem>
+<elem>HEAD</elem>
+</table>
+</script><script id="http-server-header" output="nginx/1.10.3 (Ubuntu)"><elem>nginx/1.10.3 (Ubuntu)</elem>
+</script><script id="http-title" output="Welcome to nginx!"><elem key="title">Welcome to nginx!</elem>
+</script></port>
+<port protocol="tcp" portid="10355"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="11332"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="12124"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="12760"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="13514"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="15073"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="16410"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="16679"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="17201"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="17869"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="17992"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="18155"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="18470"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="21049"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="21249"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="22026"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="22253"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="22298"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="27034"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="28277"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="28361"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="28477"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="28758"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="29263"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="30780"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="31104"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="31844"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="35897"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="36088"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="36697"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="37328"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="40693"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="42047"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="45128"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="45496"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="47036"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="47346"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="48511"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="48565"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="51958"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="54397"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="56818"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="57832"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="60198"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="60802"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="61707"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="61826"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="63749"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="64842"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+</ports>
+<hostscript><script id="clock-skew" output="mean: -1h49m55s, deviation: 3h10m30s, median: 3s"><elem key="stddev">11430</elem>
+<elem key="count">3</elem>
+<elem key="mean">-6595</elem>
+<elem key="median">3</elem>
+</script><script id="nbstat" output="NetBIOS name: FROLIC, NetBIOS user: &lt;unknown&gt;, NetBIOS MAC: &lt;unknown&gt; (unknown)&#xa;Names:&#xa;  FROLIC&lt;00&gt;           Flags: &lt;unique&gt;&lt;active&gt;&#xa;  FROLIC&lt;03&gt;           Flags: &lt;unique&gt;&lt;active&gt;&#xa;  FROLIC&lt;20&gt;           Flags: &lt;unique&gt;&lt;active&gt;&#xa;  WORKGROUP&lt;00&gt;        Flags: &lt;group&gt;&lt;active&gt;&#xa;  WORKGROUP&lt;1e&gt;        Flags: &lt;group&gt;&lt;active&gt;&#xa;Statistics:&#xa;  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00&#xa;  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00&#xa;  00 00 00 00 00 00 00 00 00 00 00 00 00 00"/><script id="p2p-conficker" output="&#xa;  Checking for Conficker.C or higher...&#xa;  Check 1 (port 55024/tcp): CLEAN (Couldn&apos;t connect)&#xa;  Check 2 (port 33400/tcp): CLEAN (Couldn&apos;t connect)&#xa;  Check 3 (port 52972/udp): CLEAN (Failed to receive data)&#xa;  Check 4 (port 4373/udp): CLEAN (Failed to receive data)&#xa;  0/4 checks are positive: Host is CLEAN or ports are blocked&#xa;"/><script id="smb-os-discovery" output="&#xa;  OS: Windows 6.1 (Samba 4.3.11-Ubuntu)&#xa;  Computer name: frolic&#xa;  NetBIOS computer name: FROLIC\x00&#xa;  Domain name: \x00&#xa;  FQDN: frolic&#xa;  System time: 2021-08-20T17:11:04+05:30&#xa;"><elem key="os">Windows 6.1</elem>
+<elem key="lanmanager">Samba 4.3.11-Ubuntu</elem>
+<elem key="server">FROLIC\x00</elem>
+<elem key="date">2021-08-20T17:11:04+05:30</elem>
+<elem key="fqdn">frolic</elem>
+<elem key="domain_dns">\x00</elem>
+<elem key="workgroup">WORKGROUP\x00</elem>
+</script><script id="smb-security-mode" output="&#xa;  account_used: guest&#xa;  authentication_level: user&#xa;  challenge_response: supported&#xa;  message_signing: disabled (dangerous, but default)"><elem key="account_used">guest</elem>
+<elem key="authentication_level">user</elem>
+<elem key="challenge_response">supported</elem>
+<elem key="message_signing">disabled</elem>
+</script><script id="smb2-security-mode" output="&#xa;  2.02: &#xa;    Message signing enabled but not required"><table key="2.02">
+<elem>Message signing enabled but not required</elem>
+</table>
+</script><script id="smb2-time" output="&#xa;  date: 2021-08-20T11:41:04&#xa;  start_date: N/A"><elem key="date">2021-08-20T11:41:04</elem>
+<elem key="start_date">N/A</elem>
+</script></hostscript><times srtt="149587" rttvar="451" to="151391"/>
+</host>
+<taskbegin task="NSE" time="1629459665"/>
+<taskend task="NSE" time="1629459665"/>
+<taskbegin task="NSE" time="1629459665"/>
+<taskend task="NSE" time="1629459665"/>
+<taskbegin task="NSE" time="1629459665"/>
+<taskend task="NSE" time="1629459665"/>
+<runstats><finished time="1629459665" timestr="Fri Aug 20 17:11:05 2021" summary="Nmap done at Fri Aug 20 17:11:05 2021; 1 IP address (1 host up) scanned in 3996.21 seconds" elapsed="3996.21" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

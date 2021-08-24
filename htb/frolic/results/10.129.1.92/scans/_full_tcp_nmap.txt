@@ -1,0 +1,128 @@
+# Nmap 7.91 scan initiated Fri Aug 20 16:04:29 2021 as: nmap -vv --reason -Pn -A --osscan-guess --version-all -p- -oN /home/kali/notes/htb/frolic/results/10.129.1.92/scans/_full_tcp_nmap.txt -oX /home/kali/notes/htb/frolic/results/10.129.1.92/scans/xml/_full_tcp_nmap.xml 10.129.1.92
+Nmap scan report for frolic.htb (10.129.1.92)
+Host is up, received user-set (0.15s latency).
+Scanned at 2021-08-20 16:04:29 IST for 3996s
+Not shown: 65473 closed ports
+Reason: 65473 conn-refused
+PORT      STATE    SERVICE     REASON      VERSION
+22/tcp    open     ssh         syn-ack     OpenSSH 7.2p2 Ubuntu 4ubuntu2.4 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 87:7b:91:2a:0f:11:b6:57:1e:cb:9f:77:cf:35:e2:21 (RSA)
+| ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3HUqxhCShF9I6uBmGCX6yXz56Iibv7WW2fBKsKA9yVqmoupPdDKac1U3/PIioRNHkPC03r5ZXsqfALwjIWEits7toO4K+9VSFU6d0qhmpUZW3WwiyxdcPxmTQLpU8InXZpMOwjpGJTTwqxsMIxNdPk0FP/MtqEzQI45MOr7IQOGcEAsmcJ1Cy3aRDAnp77NBWYA316l7Xb8WA/aWoHEyS/6Qf3XzeARf0yZ6YwYg4TTsaeQtfRr4HWZBDs7fLrrWUzN0ivb9izy9YgqrOJ5ZKQI4A1yn0CxZNsiweIT8gopM1KrfinPGiKbGbSNVvTX2dHYyISh6Y2bp1D5vum6SH
+|   256 b7:9b:06:dd:c2:5e:28:44:78:41:1e:67:7d:1e:b7:62 (ECDSA)
+| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBDSjEcHeA/VoBi4PaoyxwM1Rx1vpoQofoJPYTxBuQLXRujf3gqn491cWpd2CDh2mF/3w2kEGsrWRwqD4LZmz+Sk=
+|   256 21:cf:16:6d:82:a4:30:c3:c6:9c:d7:38:ba:b5:02:b0 (ED25519)
+|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINVT+d0lX5zwXTOY4h4+MfU6kt/q3EmGVWIXnMsomQq5
+139/tcp   open     netbios-ssn syn-ack     Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+445/tcp   open     netbios-ssn syn-ack     Samba smbd 4.3.11-Ubuntu (workgroup: WORKGROUP)
+1880/tcp  open     http        syn-ack     Node.js (Express middleware)
+|_http-favicon: Unknown favicon MD5: 818DD6AFD0D0F9433B21774F89665EEA
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-title: Node-RED
+2156/tcp  filtered trp         no-response
+4193/tcp  filtered pvxplusio   no-response
+5777/tcp  filtered dali-port   no-response
+6005/tcp  filtered X11:5       no-response
+6906/tcp  filtered unknown     no-response
+9367/tcp  filtered unknown     no-response
+9407/tcp  filtered unknown     no-response
+9516/tcp  filtered unknown     no-response
+9999/tcp  open     http        syn-ack     nginx 1.10.3 (Ubuntu)
+| http-methods: 
+|_  Supported Methods: GET HEAD
+|_http-server-header: nginx/1.10.3 (Ubuntu)
+|_http-title: Welcome to nginx!
+10355/tcp filtered unknown     no-response
+11332/tcp filtered unknown     no-response
+12124/tcp filtered unknown     no-response
+12760/tcp filtered unknown     no-response
+13514/tcp filtered unknown     no-response
+15073/tcp filtered unknown     no-response
+16410/tcp filtered unknown     no-response
+16679/tcp filtered unknown     no-response
+17201/tcp filtered unknown     no-response
+17869/tcp filtered unknown     no-response
+17992/tcp filtered unknown     no-response
+18155/tcp filtered unknown     no-response
+18470/tcp filtered unknown     no-response
+21049/tcp filtered unknown     no-response
+21249/tcp filtered unknown     no-response
+22026/tcp filtered unknown     no-response
+22253/tcp filtered unknown     no-response
+22298/tcp filtered unknown     no-response
+27034/tcp filtered unknown     no-response
+28277/tcp filtered unknown     no-response
+28361/tcp filtered unknown     no-response
+28477/tcp filtered unknown     no-response
+28758/tcp filtered unknown     no-response
+29263/tcp filtered unknown     no-response
+30780/tcp filtered unknown     no-response
+31104/tcp filtered unknown     no-response
+31844/tcp filtered unknown     no-response
+35897/tcp filtered unknown     no-response
+36088/tcp filtered unknown     no-response
+36697/tcp filtered unknown     no-response
+37328/tcp filtered unknown     no-response
+40693/tcp filtered unknown     no-response
+42047/tcp filtered unknown     no-response
+45128/tcp filtered unknown     no-response
+45496/tcp filtered unknown     no-response
+47036/tcp filtered unknown     no-response
+47346/tcp filtered unknown     no-response
+48511/tcp filtered unknown     no-response
+48565/tcp filtered unknown     no-response
+51958/tcp filtered unknown     no-response
+54397/tcp filtered unknown     no-response
+56818/tcp filtered unknown     no-response
+57832/tcp filtered unknown     no-response
+60198/tcp filtered unknown     no-response
+60802/tcp filtered unknown     no-response
+61707/tcp filtered unknown     no-response
+61826/tcp filtered unknown     no-response
+63749/tcp filtered unknown     no-response
+64842/tcp filtered unknown     no-response
+Service Info: Host: FROLIC; OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Host script results:
+|_clock-skew: mean: -1h49m55s, deviation: 3h10m30s, median: 3s
+| nbstat: NetBIOS name: FROLIC, NetBIOS user: <unknown>, NetBIOS MAC: <unknown> (unknown)
+| Names:
+|   FROLIC<00>           Flags: <unique><active>
+|   FROLIC<03>           Flags: <unique><active>
+|   FROLIC<20>           Flags: <unique><active>
+|   WORKGROUP<00>        Flags: <group><active>
+|   WORKGROUP<1e>        Flags: <group><active>
+| Statistics:
+|   00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+|   00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+|_  00 00 00 00 00 00 00 00 00 00 00 00 00 00
+| p2p-conficker: 
+|   Checking for Conficker.C or higher...
+|   Check 1 (port 55024/tcp): CLEAN (Couldn't connect)
+|   Check 2 (port 33400/tcp): CLEAN (Couldn't connect)
+|   Check 3 (port 52972/udp): CLEAN (Failed to receive data)
+|   Check 4 (port 4373/udp): CLEAN (Failed to receive data)
+|_  0/4 checks are positive: Host is CLEAN or ports are blocked
+| smb-os-discovery: 
+|   OS: Windows 6.1 (Samba 4.3.11-Ubuntu)
+|   Computer name: frolic
+|   NetBIOS computer name: FROLIC\x00
+|   Domain name: \x00
+|   FQDN: frolic
+|_  System time: 2021-08-20T17:11:04+05:30
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+| smb2-security-mode: 
+|   2.02: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: 2021-08-20T11:41:04
+|_  start_date: N/A
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri Aug 20 17:11:05 2021 -- 1 IP address (1 host up) scanned in 3996.21 seconds

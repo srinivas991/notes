@@ -1,0 +1,18 @@
+# Nmap 7.91 scan initiated Mon Aug 23 19:46:16 2021 as: nmap -vv --reason -Pn -A --osscan-guess --version-all -p- -oN /home/kali/notes/htb/blunder/results/10.129.192.191/scans/_full_tcp_nmap.txt -oX /home/kali/notes/htb/blunder/results/10.129.192.191/scans/xml/_full_tcp_nmap.xml 10.129.192.191
+Nmap scan report for 10.129.192.191
+Host is up, received user-set (0.15s latency).
+Scanned at 2021-08-23 19:46:17 IST for 359s
+Not shown: 65533 filtered ports
+Reason: 65533 no-responses
+PORT   STATE  SERVICE REASON       VERSION
+21/tcp closed ftp     conn-refused
+80/tcp open   http    syn-ack      Apache httpd 2.4.41 ((Ubuntu))
+|_http-generator: Blunder
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-server-header: Apache/2.4.41 (Ubuntu)
+|_http-title: Blunder | A blunder of interesting facts
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Aug 23 19:52:16 2021 -- 1 IP address (1 host up) scanned in 360.17 seconds

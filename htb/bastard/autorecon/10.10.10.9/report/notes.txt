@@ -1,0 +1,32 @@
+[*] http found on tcp/80.
+
+
+
+[*] msrpc found on tcp/135.
+
+
+
+[*] msrpc found on tcp/49154.
+
+
+inetpub\\drupal-7.54\\sites\\default\\settings.php
+
+$databases = array (                                                                                                  
+  'default' =>                                                                                                        
+  array (                                                                                                             
+    'default' =>                                                                                                      
+    array (                                                                                                           
+      'database' => 'drupal',                                                                                         
+      'username' => 'root',                                                                                           
+      'password' => 'mysql123!root',                                                                                  
+      'host' => 'localhost',                                                                                          
+      'port' => '',                                                                                                   
+      'driver' => 'mysql',                                                                                            
+      'prefix' => '',                                                                                                 
+    ),                                                                                                                
+  ),
+);
+
+
+$drupal_hash_salt = 'sHsUB6KgUSo7-xB5HyYfAcgpyy9R8xPGkMIUolnT-yY';
+

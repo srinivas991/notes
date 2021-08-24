@@ -1,0 +1,45 @@
+22/tcp   open  ssh
+
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+no anonymous access to shares other than listing shares
+
+
+
+
+1880/tcp open  http    Node.js (Express middleware)
+|_http-title: Node-RED
+
+ffuf -w /usr/share/dirb/wordlists/common.txt -u http://frolic.htb:1880/FUZZ -e .js,.html -t 100 -recursion -recursion-depth 3
+version: 0.19.4
+
+
+
+9999/tcp open  http    nginx 1.10.3 (Ubuntu)
+|_http-server-header: nginx/1.10.3 (Ubuntu)
+|_http-title: Welcome to nginx!
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+
+admin
+username: admin
+pass: superduperlooperpassword_lol
+we got success.html which seems to be some sort of puzzle
+ffuf with html files? to-do
+ffuf -w /usr/share/dirbuster/wordlists/directory-list-lowercase-2.3-small.txt -u http://frolic.htb:9999/admin/FUZZ.html -t 100
+
+dev
+403 - maybe brute files under this
+ffuf -w /usr/share/dirbuster/wordlists/directory-list-lowercase-2.3-small.txt -u http://frolic.htb:9999/dev/FUZZ -e .php,.txt,.html -t 200
+
+test
+phpinfo() file maybe brute this for more php files as well
+
+backup
+user: admin
+pass: imnothuman
+
+/backup/loop 403 maybe brute under this
+
+loop
+403 maybe brute under this

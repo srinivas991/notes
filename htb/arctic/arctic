@@ -1,0 +1,12 @@
+# Nmap 7.91 scan initiated Thu Aug  5 15:20:59 2021 as: nmap -sS -sV -sC -p- -Pn -oN arctic 10.10.10.11
+Nmap scan report for 10.10.10.11
+Host is up (0.051s latency).
+Not shown: 65532 filtered ports
+PORT      STATE SERVICE VERSION
+135/tcp   open  msrpc   Microsoft Windows RPC
+8500/tcp  open  fmtp?
+49154/tcp open  msrpc   Microsoft Windows RPC
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Aug  5 15:25:04 2021 -- 1 IP address (1 host up) scanned in 245.24 seconds
