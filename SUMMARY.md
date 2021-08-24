@@ -14,6 +14,7 @@
   * [shells](notes/shells.md)
   * [sqli](notes/sqli.md)
   * [windows](notes/windows.md)
+  * [php server executing .gif files](notes/php-server-executing-.gif-files.md)
 
 ## windows
 
