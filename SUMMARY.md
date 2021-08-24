@@ -2,6 +2,8 @@
 
 * [Notes](README.md)
 * [Notes](notes/README.md)
+  * [a bit forensics](notes/a-bit-forensics/README.md)
+    * [linux binary time stamps](notes/a-bit-forensics/linux-binary-time-stamps.md)
   * [common methodology](notes/common-methodology.md)
   * [nmap](notes/nmap.md)
   * [file read](notes/file-read.md)
