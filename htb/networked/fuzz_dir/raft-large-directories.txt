@@ -1,9 +1,0 @@
-backup
-lib.php
-uploads
-upload.php
-photos.php
-index.php
-
-
-index.php
