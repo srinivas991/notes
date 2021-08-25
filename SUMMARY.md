@@ -17,6 +17,7 @@
   * [sqli](notes/sqli.md)
   * [windows](notes/windows.md)
   * [php server executing .gif files](notes/php-server-executing-.gif-files.md)
+  * [transfer files over rsync](notes/transfer-files-over-rsync.md)
 
 ## windows
 
