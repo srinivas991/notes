@@ -37,7 +37,7 @@ so, after some rcp enumeration and finding users and groups, if we check for pri
 
 ![](../../.gitbook/assets/image%20%2818%29.png)
 
-![](../../.gitbook/assets/image%20%287%29%20%281%29.png)
+![](../../.gitbook/assets/image%20%287%29%20%281%29%20%282%29.png)
 
 so my goto is to run bloodhound-python when ever we get a credentials, and if we ingest the data into bloodhound we find out that svc-print user can `PSRemote` into the box
 
