@@ -11,7 +11,7 @@
   * [openssh lower version](notes/openssh-lower-version.md)
   * [Active Directory](notes/active-directory.md)
   * [LFI](notes/lfi.md)
-  * [openssl trick](notes/openssl-trick.md)
+  * [more shell](notes/openssl-trick.md)
   * [Privesc](notes/privesc.md)
   * [shells](notes/shells.md)
   * [sqli](notes/sqli.md)
