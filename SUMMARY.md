@@ -40,8 +40,10 @@
 ## Linux
 
 * [privesc](linux/privesc/README.md)
+  * [wildcard stuff](linux/privesc/wildcard-stuff.md)
   * [smtp postfix](linux/privesc/smtp-postfix.md)
   * [common searches](linux/privesc/common-searches.md)
+  * [python3 reverse shell](linux/privesc/python3-reverse-shell.md)
 * [boxes](linux/boxes/README.md)
   * [Beep](linux/boxes/beep.md)
   * [cronos](linux/boxes/cronos.md)
