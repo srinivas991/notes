@@ -121,7 +121,7 @@ on the logged in session we have an option to `ping` and `traceroute`, although 
 
 this below is my attempt on getting a `reverse shell` on the box
 
-![](../../.gitbook/assets/screenshot-2021-08-09-at-23.16.38%20%281%29%20%281%29%20%281%29%20%281%29.png)
+![](../../.gitbook/assets/screenshot-2021-08-09-at-23.16.38%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29.png)
 
 and now, we need to run the following commands on the `Burp repeater`
 
@@ -148,7 +148,7 @@ maybe we got something here.
 
 nope, none of this works. By the name of the box, it maybe that there is some `cron jobs` running here. Looking at processes using `pspy`, we can see a pho job running every minute
 
-![](../../.gitbook/assets/screenshot-2021-08-10-at-00.19.47%20%281%29%20%281%29%20%281%29%20%281%29.png)
+![](../../.gitbook/assets/screenshot-2021-08-10-at-00.19.47%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29.png)
 
 so we can modify this file to get code execution as `root` user, so let's do that now. So what I did here is, add a line that says
 
