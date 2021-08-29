@@ -9,3 +9,5 @@ python -c 'import crypt; print crypt.crypt("1234", "$6$1234")'
 perl -e 'print crypt("1234","\$6\$saltsalt\$") . "\n"'
 ```
 
+
+
