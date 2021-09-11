@@ -2,7 +2,7 @@
 
 `nmap` shows us that only port 80 is open, so lets begin enumerating that
 
-![](../../.gitbook/assets/image%20%288%29%20%281%29%20%281%29%20%281%29.png)
+![](../../.gitbook/assets/image%20%288%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29.png)
 
 shows us that we have an `aspx` files, and a folder which looks like, if we upload some thing it will go there. So lets upload a web.config with some `aspx` code in the end. This just runs a systeminfo command. I've tried with just `systeminfo` first, but it doesn't work but the below `cmd.exe /c systeminfo` worked
 
