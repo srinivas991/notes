@@ -38,6 +38,7 @@
   * [blackfield](windows/devel/blackfield.md)
   * [buff](windows/devel/buff.md)
   * [FUSE](windows/devel/fuse.md)
+  * [BankRobber](windows/devel/bankrobber.md)
 
 ## Linux
 
