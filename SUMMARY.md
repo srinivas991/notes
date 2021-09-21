@@ -25,7 +25,7 @@
 
 * [windows-common](windows/windows-common/README.md)
   * [Powershell](windows/windows-common/powershell.md)
-  * [Rogue Potato](windows/windows-common/rogue-potato.md)
+  * [Potatoes](windows/windows-common/rogue-potato.md)
   * [privesc](windows/windows-common/privesc.md)
   * [smbserver.py](windows/windows-common/smbserver.py.md)
   * [php file upload](windows/windows-common/php-file-upload.md)
