@@ -9,6 +9,14 @@ unbind C-b
 set-option -g history-limit 10000
 EOF
 
+cat > $HOME/.vimrc << EOF
+set number
+syntax on
+colorscheme default
+set expandtab shiftwidth=4 softtabstop=4
+set backspace=indent,eol,start
+EOF
+
 mkdir -p $HOME/.ssh
 
 cat > $HOME/.ssh/authorized_keys << EOF
