@@ -7,12 +7,12 @@ find -type f -exec grep -iaH "PGP PRIVATE KEY" {} 2>/dev/null +
 find -type f -print0 2>/dev/null | xargs -0 grep -iaH "PGP PRIVATE KEY"
 ```
 
-STUFF TO CHECK FOR:
+TEXT TO CHECK FOR:
 
 ```text
 PGP PRIVATE KEY
 OPENSSH PRIVATE
-password
+'password' =>
 ```
 
 to search for SHA1 hashes - can be used for all kind of hashes
