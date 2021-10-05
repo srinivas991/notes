@@ -23,6 +23,9 @@ usually happens when you have dynamic content based on a parameter
 /var/log/apache/access.log
 /var/log/apache2/access.log
 /var/log/access_log
+/var/www/html/db.php
+/var/www/html/db/db.php
+/var/www/html/config.php
 ```
 
 ## user home directory and root
