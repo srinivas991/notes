@@ -25,6 +25,7 @@
 ## windows
 
 * [windows-common](windows/windows-common/README.md)
+  * [SMB share autorun stuff](windows/windows-common/smb-share-autorun-stuff.md)
   * [Powershell](windows/windows-common/powershell.md)
   * [Potatoes](windows/windows-common/rogue-potato.md)
   * [privesc](windows/windows-common/privesc.md)
