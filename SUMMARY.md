@@ -2,6 +2,7 @@
 
 * [Notes](README.md)
 * [Notes](notes/README.md)
+  * [PHP Stuff](notes/php-stuff.md)
   * [Login Forms](notes/login-forms.md)
   * [XSS payloads](notes/xss-payloads.md)
   * [tomcat stuff](notes/tomcat-stuff.md)
@@ -56,4 +57,3 @@
   * [cronos](linux/boxes/cronos.md)
   * [previse](linux/boxes/previse.md)
   * [blunder](linux/boxes/blunder.md)
-
