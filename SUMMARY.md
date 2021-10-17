@@ -26,6 +26,8 @@
 ## windows
 
 * [windows-common](windows/windows-common/README.md)
+  * [foothold](windows/windows-common/foothold.md)
+  * [Kernel XP](windows/windows-common/kernel-xp.md)
   * [SMB share autorun stuff](windows/windows-common/smb-share-autorun-stuff.md)
   * [Powershell](windows/windows-common/powershell.md)
   * [Potatoes](windows/windows-common/rogue-potato.md)
@@ -57,3 +59,4 @@
   * [cronos](linux/boxes/cronos.md)
   * [previse](linux/boxes/previse.md)
   * [blunder](linux/boxes/blunder.md)
+  * [static](linux/boxes/static.md)
