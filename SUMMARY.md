@@ -26,7 +26,7 @@
 ## windows
 
 * [windows-common](windows/windows-common/README.md)
-  * [foothold](windows/windows-common/foothold.md)
+  * [stuff to try](windows/windows-common/stuff-to-try.md)
   * [Kernel XP](windows/windows-common/kernel-xp.md)
   * [SMB share autorun stuff](windows/windows-common/smb-share-autorun-stuff.md)
   * [Powershell](windows/windows-common/powershell.md)
@@ -50,6 +50,7 @@
 ## Linux
 
 * [privesc](linux/privesc/README.md)
+  * [Disk group](linux/privesc/disk-group.md)
   * [wildcard stuff](linux/privesc/wildcard-stuff.md)
   * [smtp postfix](linux/privesc/smtp-postfix.md)
   * [common searches](linux/privesc/common-searches.md)
