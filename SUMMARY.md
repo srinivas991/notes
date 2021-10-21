@@ -26,6 +26,7 @@
 ## windows
 
 * [windows-common](windows/windows-common/README.md)
+  * [SMB](windows/windows-common/smb.md)
   * [stuff to try](windows/windows-common/stuff-to-try.md)
   * [Kernel XP](windows/windows-common/kernel-xp.md)
   * [SMB share autorun stuff](windows/windows-common/smb-share-autorun-stuff.md)
