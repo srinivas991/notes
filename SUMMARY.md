@@ -15,7 +15,6 @@
   * [openssh lower version](notes/openssh-lower-version.md)
   * [Active Directory](notes/active-directory.md)
   * [LFI](notes/lfi.md)
-  * [more shell](notes/openssl-trick.md)
   * [Privesc](notes/privesc.md)
   * [shells](notes/shells.md)
   * [sqli](notes/sqli.md)
@@ -51,6 +50,7 @@
 ## Linux
 
 * [privesc](linux/privesc/README.md)
+  * [more shell](linux/privesc/openssl-trick.md)
   * [Disk group](linux/privesc/disk-group.md)
   * [wildcard stuff](linux/privesc/wildcard-stuff.md)
   * [smtp postfix](linux/privesc/smtp-postfix.md)
