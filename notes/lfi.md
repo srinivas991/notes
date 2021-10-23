@@ -4,7 +4,7 @@ usually happens when you have dynamic content based on a parameter
 
 ## common files
 
-```text
+```
 /etc/knockd.conf
 /etc/default/knockd
 /etc/issue
@@ -30,7 +30,7 @@ usually happens when you have dynamic content based on a parameter
 
 ## user home directory and root
 
-```text
+```
 bash_history
 .mysql_history
 .my.cnf
@@ -45,3 +45,6 @@ bash_history
 
 ?page=php://filter/convert.base64-encode/resource=/etc/passwd User-Agent: Mozilla/5.0 like Gecko
 
+
+
+LFI + php session file injection => RCE => [https://0xdf.gitlab.io/2020/03/28/htb-sniper.html](https://0xdf.gitlab.io/2020/03/28/htb-sniper.html)

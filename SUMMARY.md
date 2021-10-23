@@ -50,7 +50,7 @@
 ## Linux
 
 * [privesc](linux/privesc/README.md)
-  * [more shell](linux/privesc/openssl-trick.md)
+  * [more shell](notes/openssl-trick.md)
   * [Disk group](linux/privesc/disk-group.md)
   * [wildcard stuff](linux/privesc/wildcard-stuff.md)
   * [smtp postfix](linux/privesc/smtp-postfix.md)
