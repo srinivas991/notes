@@ -14,6 +14,7 @@ PGP PRIVATE KEY
 OPENSSH PRIVATE
 'password' =>
 password=
+"password":
 ```
 
 to search for SHA1 hashes - can be used for all kind of hashes
