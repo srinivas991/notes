@@ -2,6 +2,14 @@
 
 usually happens when you have dynamic content based on a parameter
 
+{% hint style="info" %}
+think about where and how you could write files to disk which can give you RCE
+
+* session file
+* there is almost always other services / features on the box to help with file write on disk
+* RFI
+{% endhint %}
+
 ## common files
 
 ```

