@@ -46,6 +46,8 @@
   * [buff](windows/devel/buff.md)
   * [FUSE](windows/devel/fuse.md)
   * [BankRobber](windows/devel/bankrobber.md)
+* [pgpractice](windows/pgpractice/README.md)
+  * [shenzi](windows/pgpractice/shenzi.md)
 
 ## Linux
 
