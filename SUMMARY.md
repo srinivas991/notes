@@ -25,6 +25,7 @@
 ## windows
 
 * [windows-common](windows/windows-common/README.md)
+  * [File Transfer](windows/windows-common/file-transfer.md)
   * [SMB](windows/windows-common/smb.md)
   * [stuff to try](windows/windows-common/stuff-to-try.md)
   * [Kernel XP](windows/windows-common/kernel-xp.md)
