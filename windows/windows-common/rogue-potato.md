@@ -3,6 +3,8 @@
 setup chisel - server and client
 
 ```
+## TRY PRINTSPOOFER64.exe first - might be an easy win
+
 # ON KALI
 sudo ./chisel server -p 9001 --reverse
 sudo socat tcp-listen:135,reuseaddr,fork tcp:127.0.0.1:9999
