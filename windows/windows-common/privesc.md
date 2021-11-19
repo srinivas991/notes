@@ -6,6 +6,11 @@ If there is SeImpersonate privilege here you can run the JuicyPotato exploit to 
 whoami /priv
 ```
 
+```
+reg query HKLM /f pass /t REG_SZ /s
+cmdkey /list
+```
+
 Once you get a shell on the box, you can run Sherlock to check if you have any vulnerable exploits
 
 ```
