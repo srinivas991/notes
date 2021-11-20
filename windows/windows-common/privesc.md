@@ -6,6 +6,13 @@ If there is SeImpersonate privilege here you can run the JuicyPotato exploit to 
 whoami /priv
 ```
 
+windows last patched march 2020 or before, you can try SMBGhost vulnerability
+
+```
+wmic qfe list
+(https://github.com/danigargu/CVE-2020-0796)
+```
+
 ```
 reg query HKLM /f pass /t REG_SZ /s
 cmdkey /list
