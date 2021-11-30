@@ -54,6 +54,7 @@
 
 * [privesc](linux/privesc/README.md)
   * [more shell](notes/openssl-trick.md)
+  * [rbash breakout](linux/privesc/rbash-breakout.md)
   * [Disk group](linux/privesc/disk-group.md)
   * [wildcard stuff](linux/privesc/wildcard-stuff.md)
   * [smtp postfix](linux/privesc/smtp-postfix.md)
